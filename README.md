@@ -12,9 +12,9 @@
 - **框架**: VUE
 
 ### 📂 目录结构说明
-- `/java-basics`: 存放 java 代码
-- `/web-dev`: 存放网页开发练习
-- `/projects`: 存放完整的项目代码
+- `/Java_idea_workspace`: 存放 java 代码
+- `/Front-End-Practice`: 存放网页开发练习
+
 
 ### 📫 联系我
 - **GitHub**: XuLeo-yep
