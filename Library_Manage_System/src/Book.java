@@ -35,4 +35,12 @@ public class Book extends CatalogItem{
         this.author = author;
         this.numberOfPages = numberOfPages;
     }
+
+    @Override
+    public String toString() {
+        return "Book{" + super.toString() +
+                "author='" + author + '\'' +
+                ", numberOfPages=" + numberOfPages +
+                '}';
+    }
 }

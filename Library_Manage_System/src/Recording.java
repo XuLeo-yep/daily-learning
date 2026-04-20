@@ -35,4 +35,13 @@ public class Recording extends CatalogItem{
         this.performer = performer;
         this.format = format;
     }
+
+    @Override
+    public String toString() {
+        return "Recording{" + super.toString() +
+                "performer='" + performer + '\'' +
+                ", format='" + format + '\'' +
+                '}';
+    }
 }
+

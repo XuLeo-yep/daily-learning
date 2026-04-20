@@ -68,6 +68,15 @@ public class CatalogItem {
         return available;
     }
 
+    @Override
+    public String toString() {
+        return
+                "code='" + code + '\'' +
+                ", title='" + title + '\'' +
+                ", year=" + year +
+                ", available=" + available ;
+    }
+
     /**
      * Sets the availability status of this item.
      * @param available  true to mark the item as available,false otherwise
