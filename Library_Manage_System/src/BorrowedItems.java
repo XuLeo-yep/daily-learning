@@ -25,7 +25,6 @@ public class BorrowedItems {
                 return item;
             }
         }
-        System.out.println("Item "+code+" not found");
         return null;
     }
 

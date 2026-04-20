@@ -28,7 +28,6 @@ public class Catalog {
                 return item;
             }
         }
-        System.out.println("Item "+code+" not found");
         return null;
     }
 
