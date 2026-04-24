@@ -9,7 +9,7 @@ public class HTMLSalesFormatter implements SalesFormatter{
     }
 
     private  HTMLSalesFormatter(){
-        HTMLFormatter = new HTMLSalesFormatter();
+
     }
 
     public String formatSales(Sales sales) {

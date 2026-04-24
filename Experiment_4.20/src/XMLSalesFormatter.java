@@ -9,7 +9,7 @@ public class XMLSalesFormatter implements SalesFormatter{
     }
 
     public XMLSalesFormatter() {
-        XMLFormatter = new XMLSalesFormatter();
+
     }
 
     public String formatSales(Sales sales) {

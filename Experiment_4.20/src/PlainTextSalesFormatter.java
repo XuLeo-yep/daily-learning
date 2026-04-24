@@ -10,7 +10,6 @@ public class PlainTextSalesFormatter implements SalesFormatter{
     }
 
     private PlainTextSalesFormatter() {
-            plainTextSalesFormatter = new PlainTextSalesFormatter();
     }
 
 
