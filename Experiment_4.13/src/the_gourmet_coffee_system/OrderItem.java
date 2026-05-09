@@ -27,7 +27,7 @@ public class OrderItem {
     }
 
     public double getValue() {
-        return  quantity * product.getPrice();
+        return  getQuantity() * getProduct().getPrice();
     }
 
     @Override
