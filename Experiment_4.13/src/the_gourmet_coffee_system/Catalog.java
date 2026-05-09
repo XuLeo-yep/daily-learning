@@ -13,8 +13,8 @@ public class Catalog implements Iterable<Product>{
         this.products = new ArrayList<Product>();
     }
 
-    public void addProduct(Product products){
-        this.products.add(products);
+    public void addProduct(Product product){
+        this.products.add(product);
     }
 
     public Iterator<Product> iterator(){
@@ -22,9 +22,9 @@ public class Catalog implements Iterable<Product>{
     }
 
     public Product getProduct(String code){
-        for(Product products : products){
-            if(code.equals(products.getCode())){
-                return products;
+        for(Product product : products){
+            if(code.equals(product.getCode())){
+                return product;
             }
         }
         return null;
