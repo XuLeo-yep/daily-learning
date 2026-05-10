@@ -410,11 +410,23 @@ public class GourmetCoffee  {
      * product in the catalog.
      */
     public void displayTotalQuantityOfProducts() {
-
-        int total = catalog.getNumberOfProducts();
-        System.out.println("There are " + total +
-                " products in the catalog.");
-
+        Iterator<Product> productIterator = catalog.iterator();
+        while (productIterator.hasNext()) {
+            Product currentProduct = productIterator.next();
+            int totalQty = 0;
+            Iterator<Order> orderIterator = sales.iterator();
+            while (orderIterator.hasNext()) {
+                Order order = orderIterator.next();
+                Iterator<OrderItem> itemIterator = order.iterator();
+                while (itemIterator.hasNext()) {
+                    OrderItem item = itemIterator.next();
+                    if (item.getProduct().getCode().equals(currentProduct.getCode())) {
+                        totalQty += item.getQuantity();
+                    }
+                }
+            }
+            System.out.println("Product: " + currentProduct.getDescription() + ", Total Quantity: " + totalQty);
+        }
     }
 
     /*
