@@ -1,5 +1,6 @@
 package the_gourmet_coffee_system;
 
+import javax.swing.text.html.HTMLDocument;
 import java.io.*;
 import java.util.*;
 import java.text.*;
@@ -411,21 +412,26 @@ public class GourmetCoffee  {
      */
     public void displayTotalQuantityOfProducts() {
         Iterator<Product> productIterator = catalog.iterator();
-        while (productIterator.hasNext()) {
+        while (productIterator.hasNext()){
             Product currentProduct = productIterator.next();
-            int totalQty = 0;
+
+            int quantityOfCurrentProduct = 0;
+
             Iterator<Order> orderIterator = sales.iterator();
-            while (orderIterator.hasNext()) {
-                Order order = orderIterator.next();
-                Iterator<OrderItem> itemIterator = order.iterator();
-                while (itemIterator.hasNext()) {
-                    OrderItem item = itemIterator.next();
-                    if (item.getProduct().getCode().equals(currentProduct.getCode())) {
-                        totalQty += item.getQuantity();
-                    }
+            while (orderIterator.hasNext()){
+                Order currentOrder = orderIterator.next();
+
+                Iterator<OrderItem> itemIterator = currentOrder.iterator();
+                while (itemIterator.hasNext()){
+                 OrderItem item = itemIterator.next();
+
+                 if(item.getProduct().getCode().equals(currentProduct.getCode())){
+                     quantityOfCurrentProduct += 1;
+                 }
                 }
             }
-            System.out.println("Product: " + currentProduct.getDescription() + ", Total Quantity: " + totalQty);
+            System.out.println("Product : "+ currentProduct.getDescription()+", Total Quantity:"+
+                    quantityOfCurrentProduct);
         }
     }
 
