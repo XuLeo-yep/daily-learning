@@ -426,7 +426,7 @@ public class GourmetCoffee  {
                  OrderItem item = itemIterator.next();
 
                  if(item.getProduct().getCode().equals(currentProduct.getCode())){
-                     quantityOfCurrentProduct += 1;
+                     quantityOfCurrentProduct += item.getQuantity();
                  }
                 }
             }
