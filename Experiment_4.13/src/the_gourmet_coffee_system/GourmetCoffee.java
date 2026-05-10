@@ -401,7 +401,7 @@ public class GourmetCoffee  {
            }
        }
 
-        System.out.println("Product :"+ product.toString() + "exits in " +
+        stdOut.println("Product :"+ product.toString() + "exits in " +
                 count + "orders");
 
     }
@@ -411,26 +411,16 @@ public class GourmetCoffee  {
      * product in the catalog.
      */
     public void displayTotalQuantityOfProducts() {
-        Iterator<Product> productIterator = catalog.iterator();
-        while (productIterator.hasNext()){
-            Product currentProduct = productIterator.next();
-
+        for(Product currentProduct : catalog){
             int quantityOfCurrentProduct = 0;
-
-            Iterator<Order> orderIterator = sales.iterator();
-            while (orderIterator.hasNext()){
-                Order currentOrder = orderIterator.next();
-
-                Iterator<OrderItem> itemIterator = currentOrder.iterator();
-                while (itemIterator.hasNext()){
-                 OrderItem item = itemIterator.next();
-
-                 if(item.getProduct().getCode().equals(currentProduct.getCode())){
-                     quantityOfCurrentProduct += item.getQuantity();
-                 }
+            for (Order order : sales){
+                OrderItem item = order.getItem(currentProduct);
+                if (item!=null){
+                    quantityOfCurrentProduct += item.getQuantity();
                 }
             }
-            System.out.println("Product : "+ currentProduct.getDescription()+", Total Quantity:"+
+
+            stdOut.println("Product : "+ currentProduct.getDescription()+", Total Quantity:"+
                     quantityOfCurrentProduct);
         }
     }
